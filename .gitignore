@@ -1,0 +1,8 @@
+.gradle
+libs
+build
+.kotlin
+local.properties
+android/build
+android/build/screenshots
+*.hprof

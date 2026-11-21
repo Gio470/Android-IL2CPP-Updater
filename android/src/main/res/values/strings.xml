@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Every word the app shows. Nothing user-visible is written in the Kotlin, so this file is the
+  only place to change wording, and the only file a translation needs.
+
+  Placeholders: %1$s is a string, %1$d a whole number, %1$.1f a number to one decimal. Where a
+  string has more than one, they are numbered and may be reordered freely. A <plurals> entry picks
+  its line by the count, so keep both.
+-->
+<resources>
+
+    <!-- ============================================================ the app itself -->
+    <string name="app_name">IL2CPP Offset Updater</string>
+    <string name="section_results">Your offsets</string>
+    <string name="results_filter_empty">No offsets in this filter yet.</string>
+
+    <!-- ============================================================ status line and card -->
+    <!-- Shown before anything has been run. -->
+    <string name="status_ready">Ready to Analyze</string>
+    <string name="status_ready_detail">Select your original and target libraries along with your offsets, then tap Start.</string>
+    <!-- %1$d offsets done, %2$s the total (an em dash until the count is known). -->
+    <string name="status_working">Processing %1$d of %2$s</string>
+    <string name="status_working_detail">Keep the app open while analysis is in progress.</string>
+    <!-- %1$d resolved, %2$d in total. -->
+    <string name="status_done">%1$d of %2$d offsets updated</string>
+    <!-- %1$.1f seconds, %2$s the engine's name. -->
+    <string name="status_done_detail">Completed in %1$.1fs using the %2$s engine</string>
+    <string name="status_total_unknown">…</string>
+
+    <!-- ============================================================ the toolbar -->
+    <string name="pane_setup">Setup</string>
+    <string name="pane_results">Results</string>
+    <string name="action_start">Start</string>
+    <string name="action_stop">Stop</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_share">Share</string>
+    <string name="action_clear_file">Clear %1$s</string>
+    <string name="share_chooser">Share Results</string>
+
+    <!-- ============================================================ section headers -->
+    <string name="section_engine">Analysis</string>
+    <string name="section_options">Advanced settings</string>
+    <!-- On the right of the Files header: everything chosen, or how far along. -->
+    <string name="files_ready">Ready</string>
+    <string name="files_chosen">%1$d of 3 selected</string>
+
+    <!-- ============================================================ the files -->
+    <string name="file_old_library">Original Library</string>
+    <string name="file_old_library_hint">The build your offsets came from</string>
+    <string name="file_new_library">Target Library</string>
+    <string name="file_new_library_hint">The updated library to search</string>
+    <string name="file_offsets">Offsets File</string>
+    <string name="file_offsets_hint">Hexadecimal offsets (0x… per line)</string>
+    <string name="file_old_dump">Original Metadata Dump</string>
+    <string name="file_old_dump_hint">Optional script.json from Il2CppDumper</string>
+    <string name="file_new_dump">Target Metadata Dump</string>
+    <string name="file_new_dump_hint">Optional metadata file to confirm ambiguous moves</string>
+    <!-- Shown on the offsets row when offsets were typed rather than picked. -->
+    <plurals name="file_offsets_typed">
+        <item quantity="one">%1$d offset entered manually</item>
+        <item quantity="other">%1$d offsets entered manually</item>
+    </plurals>
+    <!-- A chosen file: %1$s its name, %2$s its size. -->
+    <string name="file_description">%1$s  ·  %2$s</string>
+    <string name="size_megabytes">%1$d MB</string>
+    <string name="size_kilobytes">%1$d KB</string>
+    <string name="size_bytes">%1$d B</string>
+
+    <!-- ============================================================ typed offsets -->
+    <string name="typed_offsets_label">Manual Offsets</string>
+    <string name="typed_offsets_placeholder">0x2209c04\n0x3ea393c</string>
+
+    <!-- ============================================================ the engines -->
+    <string name="engine_classic">Standard</string>
+    <string name="engine_classic_blurb">Finds unique byte patterns and adjusts their length automatically.</string>
+    <string name="engine_modern">Enhanced</string>
+    <string name="engine_modern_blurb">Uses byte patterns, call graphs, and method tables for harder matches.</string>
+    <string name="engine_nullupdater">Basic</string>
+    <string name="engine_nullupdater_blurb">Matches complete functions from their entry point to the return instruction.</string>
+
+    <!-- ============================================================ options -->
+    <string name="option_auto_tune">Dynamic Length Tuning</string>
+    <string name="option_start_at">Initial Length</string>
+    <string name="option_widen_to">Maximum Width</string>
+    <string name="option_grow_to">Expansion Limit</string>
+    <string name="option_allow_up_to">Max Allowed Matches</string>
+    <string name="unit_bytes">bytes</string>
+    <string name="unit_matches">matches</string>
+    <string name="option_output_format">Output Format</string>
+    <string name="option_show">Show</string>
+    <string name="option_hide">Hide</string>
+    <!-- The folded-away summary: %1$s the tuning, %2$s the output format. -->
+    <string name="options_summary">%1$s  ·  %2$s</string>
+    <string name="tuning_auto">Auto, up to %1$s bytes</string>
+    <string name="tuning_fixed">Fixed at %1$s bytes</string>
+    <string name="tuning_grow">Expand to %1$s bytes</string>
+    <plurals name="tuning_matches">
+        <item quantity="one">Up to %1$s match</item>
+        <item quantity="other">Up to %1$s matches</item>
+    </plurals>
+
+    <!-- ============================================================ output formats -->
+    <string name="format_detailed_blurb">Comprehensive breakdown displaying all pattern signatures and matched candidates.</string>
+    <string name="format_pairs_blurb">Direct mappings formatted as Old → New (one per line).</string>
+    <string name="format_offsets_blurb">Clean offset list ready to be used as input for future runs.</string>
+
+    <!-- ============================================================ results -->
+    <string name="stat_resolved">Resolved</string>
+    <string name="stat_ambiguous">Ambiguous</string>
+    <string name="stat_missing">Missing</string>
+    <string name="filter_all">All</string>
+    <string name="filter_resolved">Resolved</string>
+    <string name="filter_ambiguous">Ambiguous</string>
+    <string name="filter_missing">Missing</string>
+    <!-- A filter chip: %1$s its name, %2$d how many it would show. -->
+    <string name="filter_chip">%1$s  %2$d</string>
+    <string name="result_not_found">Not Found</string>
+    <string name="result_error">Error</string>
+    <plurals name="result_matches">
+        <item quantity="one">%1$d match</item>
+        <item quantity="other">%1$d matches</item>
+    </plurals>
+    <!-- Confirmed after tapping a result, and the label a screen reader reads on the button. -->
+    <string name="copied">Copied %1$s</string>
+    <string name="copy_offset">Copy %1$s</string>
+    <string name="show_candidates">View candidates</string>
+    <string name="hide_candidates">Hide candidates</string>
+
+    <!-- ============================================================ the file browser -->
+    <string name="browser_title">Choose a file</string>
+    <string name="browser_close">Close</string>
+    <string name="browser_up">Parent Folder</string>
+    <string name="browser_system_picker">System Picker</string>
+    <string name="browser_all_files">All Files</string>
+    <string name="browser_showing_all">Displaying all files</string>
+    <!-- %1$s is a list of extensions, already joined, e.g. "so" or "txt, .csv". -->
+    <string name="browser_showing_first">Prioritizing .%1$s files</string>
+    <string name="browser_place_storage">Storage</string>
+    <string name="browser_place_download">Downloads</string>
+    <string name="browser_place_documents">Documents</string>
+    <string name="browser_place_dumpdroid">DumpDroid</string>
+    <string name="browser_empty">Folder is empty</string>
+    <!-- %1$s is a list of extensions, e.g. ".so" or ".txt/.csv/.log". -->
+    <string name="browser_empty_filtered">No %1$s files found in this folder</string>
+    <string name="browser_show_every_file">Show all files</string>
+    <string name="access_title">File Permission Required</string>
+    <string name="access_body">Selecting binary files requires local file access. Your files remain completely private and are processed locally on your device.</string>
+    <string name="access_allow">Grant Access</string>
+    <string name="access_use_picker">Use System Picker</string>
+
+    <!-- ============================================================ what can go wrong -->
+    <string name="error_no_offsets">Could not parse offsets. Ensure format is one hexadecimal address (0x…) per line.</string>
+    <string name="error_out_of_memory">Insufficient memory to process binary libraries. Please close background apps and retry.</string>
+    <string name="message_stopped">Operation cancelled.</string>
+    <!-- %1$d the line number, %2$s what was on it, %3$s what is wrong with it. -->
+    <string name="warning_line">Line %1$d: \'%2$s\' %3$s</string>
+    <string name="warning_dump_empty">%1$s contains no ScriptMethod entries and was skipped</string>
+    <string name="error_cannot_open">Unable to open %1$s</string>
+    <string name="error_nothing_to_read">No readable content found in %1$s</string>
+    <!-- Shown when Capstone, the disassembler, will not start. -->
+    <string name="capstone_loads">The bundled Capstone engine initialized successfully.</string>
+    <string name="capstone_fails">Failed to initialize the Capstone engine: %1$s</string>
+    <string name="capstone_caused_by">\n  Caused by: </string>
+    <!-- %1$s the chain of failures, %2$s whether Capstone loads on its own. -->
+    <string name="capstone_report">%1$s\n\n%2$s</string>
+
+    <string name="setup_heading">Set up an update</string>
+    <string name="setup_description">Prepare your files, choose an engine, then tap Start.</string>
+    <string name="section_libraries">Libraries</string>
+    <string name="section_offsets">Offsets</string>
+    <string name="results_empty_title">Your results start here</string>
+    <string name="results_empty_body">Add your libraries and offsets in Setup, then start an update.</string>
+    <string name="results_go_setup">Go to Setup</string>
+    <plurals name="results_count">
+        <item quantity="one">%1$d offset</item>
+        <item quantity="other">%1$d offsets</item>
+    </plurals>
+    <plurals name="diagnostics_count">
+        <item quantity="one">%1$d diagnostic</item>
+        <item quantity="other">%1$d diagnostics</item>
+    </plurals>
+
+</resources>
+

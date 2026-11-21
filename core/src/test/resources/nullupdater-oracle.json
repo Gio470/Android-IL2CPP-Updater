@@ -1,0 +1,113 @@
+[
+  {
+    "offset": "0x100",
+    "pattern": "FF 83 00 D1 ?? ?? ?? ?? ?? ?? ?? F9 68 02 00 B4 ?? ?? ?? ?? ?? ?? ?? 91 ?? ?? ?? F9 ?? ?? ?? ?? C0 01 00 B4 ?? ?? ?? F9 20 00 3F D6 ?? ?? ?? 91 C0 03 5F D6",
+    "settled": false,
+    "matchCount": 1,
+    "matches": [
+      "0x1100"
+    ]
+  },
+  {
+    "offset": "0x200",
+    "pattern": "1F 20 03 D5 ?? ?? ?? ?? ?? ?? ?? ?? 1F 00 02 EB 81 01 00 54 ?? ?? ?? F9 43 01 00 B4 ?? ?? ?? ?? 00 01 00 54 0B 01 00 54 ?? ?? ?? F9 C0 03 5F D6",
+    "settled": false,
+    "matchCount": 1,
+    "matches": [
+      "0x1300"
+    ]
+  },
+  {
+    "offset": "0x300",
+    "pattern": "FF 43 00 D1 E0 03 00 F9 ?? ?? ?? F9 ?? ?? ?? F9 ?? ?? ?? F9 02 00 01 AA 5F 00 00 EB ?? ?? ?? 91 ?? ?? ?? 91 C0 03 5F D6",
+    "settled": false,
+    "matchCount": 1,
+    "matches": [
+      "0x1500"
+    ]
+  },
+  {
+    "offset": "0x400",
+    "pattern": "1F 20 03 D5 ?? ?? ?? ??",
+    "settled": true,
+    "matchCount": 11186,
+    "firstMatches": [
+      "0x1134",
+      "0x1138",
+      "0x113c",
+      "0x1140",
+      "0x1144",
+      "0x1148",
+      "0x114c",
+      "0x1150"
+    ],
+    "lastMatches": [
+      "0xbfdc",
+      "0xbfe0",
+      "0xbfe4",
+      "0xbfe8",
+      "0xbfec",
+      "0xbff0",
+      "0xbff4",
+      "0xbff8"
+    ],
+    "overreported": true,
+    "trueMatchCount": 162,
+    "trueFirstMatches": [
+      "0x1134",
+      "0x1138",
+      "0x113c",
+      "0x1140",
+      "0x1144",
+      "0x1148",
+      "0x114c",
+      "0x1150"
+    ],
+    "trueLastMatches": [
+      "0x1f60",
+      "0x1f64",
+      "0x1f68",
+      "0x1f6c",
+      "0x1f70",
+      "0x1f74",
+      "0x1f78",
+      "0x1f7c"
+    ]
+  },
+  {
+    "offset": "0x500",
+    "pattern": "?? ?? ?? F9 48 01 00 36 28 01 18 36 08 01 38 37 ?? ?? ?? 91 C8 00 08 36 A8 00 28 37 ?? ?? ?? ?? 1F 00 08 EB 41 00 00 54 00 00 08 AA C0 03 5F D6",
+    "settled": false,
+    "matchCount": 1,
+    "matches": [
+      "0x1900"
+    ]
+  },
+  {
+    "offset": "0x600",
+    "pattern": "1F 00 01 EB 00 02 00 54 E1 01 00 54 CA 01 00 54 AB 01 00 54 8C 01 00 54 6D 01 00 54 ?? ?? ?? ?? 1F 00 02 EB 08 01 00 54 03 00 01 AA ?? ?? ?? 91 C0 03 5F D6",
+    "settled": false,
+    "matchCount": 1,
+    "matches": [
+      "0x1b00"
+    ]
+  },
+  {
+    "offset": "0x700",
+    "pattern": "?? ?? ?? ?? ?? ?? ?? F9 ?? ?? ?? F9 ?? ?? ?? F9 ?? ?? ?? 39 ?? ?? ?? B9 ?? ?? ?? 39 3F 00 02 EB A1 00 00 54 ?? ?? ?? F9 ?? ?? ?? F9 00 00 01 AA C0 03 5F D6",
+    "settled": false,
+    "matchCount": 1,
+    "matches": [
+      "0x1d00"
+    ]
+  },
+  {
+    "offset": "0x800",
+    "pattern": "FF C3 00 D1 ?? ?? ?? ?? ?? ?? ?? F9 69 02 00 B4 ?? ?? ?? ?? ?? ?? ?? 91 ?? ?? ?? F9 ?? ?? ?? ?? C3 01 00 B4 ?? ?? ?? F9 80 00 3F D6 ?? ?? ?? 91 C0 03 5F D6",
+    "settled": false,
+    "matchCount": 1,
+    "matches": [
+      "0x1f00"
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+name: Android APK
+
+on:
+  push:
+    branches: ["**"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+          log-accepted-android-sdk-licenses: false
+
+      - name: UI formatting
+        run: ./gradlew :android:ktfmtCheck --no-daemon
+
+      - name: Tests
+        run: ./gradlew :core:test :android:testDebugUnitTest :android:lintDebug --no-daemon
+
+      - name: UI previews and test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-previews-and-reports
+          path: |
+            android/build/screenshots/
+            android/build/reports/
+            core/build/reports/tests/
+
+      - name: Build the APK
+        run: ./gradlew :android:assembleDebug --no-daemon
+
+      # Download it from the run's summary page; on a phone that is the whole
+      # install route, since nothing here needs a desktop.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: offset-updater-debug-apk
+          path: android/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+
